@@ -1,17 +1,16 @@
-= Introduction =
-
-Add your content here.
-
-
 === General Information ===
 
-Memcache Reporter is a memcache server traffic analyzer, for Linux operation system. 
+Advanced Reporter for memcached is a memcache server traffic analyzer for Linux which provides information about the most active clients and object keys in your memcached server.  It can provide stats like:
 
-The code has two parts, one is a kernel patch to intercept traffic from TCP/IP stack, another part is a user space daemon that does analysis on the data collected from kernel part.
+  * Hot keys - e.g. which keys are used the most often in certain memcached servers.
+  * Hot clients - e.g. which clients (based on their IP and port) accesses specific memcached servers most often.
+  * Hot clients on a per-key basis - e.g. which clients has accessed a specific key the most.
+
+The code has two parts, one is a kernel patch to intercept traffic from TCP/IP stack, another part is a user space daemon that does analysis on the data collected from kernel part.Since the tool includes a TCP/UDP stream-level interceptor and a high- speed collector inside kernel, it would require you to patch and re-build your Linux kernel before you can use it.  
 
 === Memory Requirement ==
 
-mcr was initially developed for Gear6's memcache appliance, it has the assumption of large memory server environment. By large memory, we mean 10G or more. It requires at least 300M memory to load, and for each target server added, it requires an addition 300M to collect and hold data for analysis. 
+Advanced Reporter was initially developed for Gear6's memcache appliance, it has the assumption of large memory server environment. By large memory, we mean 10G or more. It requires at least 300M memory to load, and for each target server added, it requires an addition 300M to collect and hold data for analysis. 
 
 === Kernel Supported ===
 
